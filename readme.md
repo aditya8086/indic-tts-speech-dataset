@@ -1,8 +1,8 @@
 # indic-tts-dataset
 
-**End-to-end data engineering for speech: an automated pipeline that turns raw YouTube audio into a clean, structured, style-labelled TTS training corpus — acquisition, segmentation, ASR transcription, LLM labelling, and publishing, fully scripted.**
+**End-to-end data engineering for speech: an automated pipeline that turns raw YouTube audio into a clean, structured, style-labeled TTS training corpus — acquisition, segmentation, ASR transcription, LLM labeling, and publishing, fully scripted.**
 
-`yt-dlp` · `ffmpeg` · `ASR (Saaras v3)` · `LLM labelling (sarvam-105b)` · `HuggingFace Datasets`
+`yt-dlp` · `ffmpeg` · `ASR (Saaras v3)` · `LLM labeling (sarvam-105b)` · `HuggingFace Datasets`
 
 End-to-end pipeline for building a Hindi + English TTS training dataset from YouTube audio. Downloads source videos, cuts timestamped clips, transcribes with ASR, labels speaking style with an LLM, and publishes a structured dataset to HuggingFace.
 
@@ -49,7 +49,7 @@ YouTube URLs + timestamps
 
 ## Design decision: style labels, not emotion labels
 
-A deliberate engineering choice in this pipeline is labelling each clip by **speaking style** (educational, storytelling, motivational, …) rather than by emotion. Emotion labels are noisy and inconsistent to assign from transcript text alone, and map poorly onto what a TTS model actually needs. Speaking style is far more reliably labelable from the transcript, and is more directly useful for controlling **prosody** in downstream TTS training. The taxonomy is a fixed, closed set so labels stay consistent across the whole corpus.
+A deliberate engineering choice in this pipeline is labeling each clip by **speaking style** (educational, storytelling, motivational, …) rather than by emotion. Emotion labels are noisy and inconsistent to assign from transcript text alone, and map poorly onto what a TTS model actually needs. Speaking style is far more reliably labelable from the transcript, and is more directly useful for controlling **prosody** in downstream TTS training. The taxonomy is a fixed, closed set so labels stay consistent across the whole corpus.
 
 ---
 
